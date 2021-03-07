@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Race to Perfection</title>
+  </head>
+  <body>
+
+
+    <!-- navbar dropdown menu w/o bootstrap -->
+
+    <div class="dropdown">
+
+      <div class="option-file menu">
+        <button class="file-btn">File</button>
+        <div class="dropdown-content">
+          <a href="#">New</a>
+          <a href="#">Open</a>
+          <a href="#">Save</a>
+          <a href="#">Save As</a>
+          <hr>
+          <a href="#">Load Image From URL</a>
+          <a href="#" id="imgDownload" download="img.png">Download Image</a>
+          <a href="#" id="imgUpload">Upload Image</a>
+          <hr>
+          <a href="#">Print Preview</a>
+          <a href="#">Page Setup</a>
+          <a href="#">Print</a>
+          <hr>
+          <a href="#">Set As Wallpaper(Tiled)</a>
+          <a href="#">Set As Wallpaper(Centered)</a>
+          <hr>
+          <a href="#">Exit</a>
+        </div>
+      </div>
+
+      <div class="option-edit menu">
+        <button class="edit-btn">Edit</button>
+        <div class="dropdown-content">
+          <a href="#">Undo</a>
+          <a href="#">Repeat</a>
+          <hr>
+          <a href="#">Cut</a>
+          <a href="#">Copy</a>
+          <a href="#">Paste</a>
+          <a href="#">Clear Selection</a>
+          <a href="#">Select All</a>
+        </div>
+      </div>
+
+      <div class="option-view menu">
+        <button class="view-btn">View</button>
+        <div class="dropdown-content">
+          <a href="#">Tool Box</a>
+          <a href="#">Color Box</a>
+          <a href="#">Status Bar</a>
+          <hr>
+          <a href="#">Status Bar</a>
+        </div>
+      </div>
+
+      <div class="option-image menu">
+        <button class="image-btn">Image</button>
+        <div class="dropdown-content">
+          <a href="#">Flip/Rotate</a>
+          <a href="#">Stretch/Rotate</a>
+          <a href="#">Invert Color</a>
+          <hr>
+          <a href="#">Clear Image</a>
+        </div>
+      </div>
+
+      <div class="option-color menu">
+        <button class="color-btn">Color</button>
+        <div class="dropdown-content">
+          <a href="#">Edit Color</a>
+          <a href="#">Get Color</a>
+          <a href="#">Save Color</a>
+        </div>
+      </div>
+
+      <div class="option-help menu">
+        <button class="help-btn">Help</button>
+        <div class="dropdown-content">
+          <a href="#">Help Topics</a>
+          <a href="#">About Paint</a>
+        </div>
+      </div>
+
+      <div class="option-extra menu">
+        <button class="extra-btn">Extra</button>
+        <div class="dropdown-content">
+          <a href="#">Query input 1</a>
+          <a href="#">Extra query 2</a>
+          <a href="#">Extra query 3</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="mainSection">
+
+      <div class="toolbar-canvas">
+        
+        <div class="pair-of-tools">
+          <div class="tool">
+            <div id="eraser" onclick="changeTool('eraser')">
+              <img src="images/eraser.svg" width="20" height="20">
+            </div>
+            <span class="tooltip">Eraser</span>
+          </div>
+          <div class="tool">
+            <div id="colorFiller" onclick="changeTool('colorFiller')">
+              <img src="images/paint-bucket.svg" width="20" height="20">
+            </div>
+            <span class="tooltip">Fill with Color</span>
+          </div>
+        </div>
+
+        <div class="pair-of-tools">
+          <div class="tool">
+            <div id="magnifier" onclick="changeTool('magnifier')">
+              <img src="images/magnifying-glass.svg" width="20" height="20">
+            </div>
+            <span class="tooltip">Magnifier</span>
+          </div>
+          <div class="tool">
+            <div id="pickColor" onclick="changeTool('pickColor')">
+              <img src="images/color-picker.svg" width="20" height="20">
+            </div>
+            <span class="tooltip">Pick Color</span>
+          </div>
+        </div>
+
+        <div class="pair-of-tools">
+          <div class="tool selected">
+            <div id="pencil" onclick="changeTool('pencil')">
+              <img src="images/pencil.svg" width="20" height="20">
+            </div>
+            <span class="tooltip">Pencil</span>
+          </div>
+          <div class="tool">
+            <div id="brush" onclick="changeTool('brush')">
+              <img src="images/paint-brush.svg" width="20" height="20">
+            </div>
+            <span class="tooltip">Brush</span>
+          </div>
+        </div>
+
+        <div class="pair-of-tools">
+          <div class="tool">
+            <div id="airBrush" onclick="changeTool('airBrush')">
+              <img src="images/airbrush.svg" width="20" height="20">
+            </div>
+            <span class="tooltip">Airbrush</span>
+          </div>
+          <div class="tool">
+            <div id="text" onclick="changeTool('text')">
+              <img src="images/text.svg" width="20" height="20">
+            </div>
+            <span class="tooltip">Text</span>
+          </div>
+        </div>
+
+        <div class="pair-of-tools">
+          <div class="tool">
+            <div id="rectangle" onclick="changeTool('rectangle')">
+              <img src="images/rectangle-svg.svg" width="20" height="20">
+            </div>
+            <span class="tooltip">Rectangle</span>
+          </div>
+          <div class="round-rect tool">
+            <div id="roundRect" onclick="changeTool('roundRect')">
+              <img src="images/rounded-rectangle.svg" width="20" height="20">
+            </div>
+            <span class="tooltip">Rounded Rectangle</span>
+          </div>
+        </div>
+
+        <div class="pair-of-tools">
+          <div class="tool">
+            <div id="line" onclick="changeTool('line')">
+              <img src="images/diagonal-line.svg" width="20" height="20">
+            </div>
+            <span class="tooltip">Line</span>
+          </div>
+          <div class="circle tool">
+            <div id="circle" onclick="changeTool('circle')">
+              <img src="images/dry-clean.svg"  width="20" height="20">
+            </div>
+            <span class="tooltip">Circle</span>
+          </div>
+        </div>
+
+        <div class="tool-params"></div>
+
+
+
+      </div>
+
+      <!-- main Canvas -->
+      <canvas id="canvasId" width="1200" height="580"></canvas>
+
+    </div>
+
+    
+
+
+
+
+    <!--  Trigger/Open The popup box -->
+    <!-- <button id="imageBtn">Upload Image</button> -->
+
+    <!-- The popup -->
+    <div id="popupWindow" class="popup-window">
+      <!-- popup box content -->
+      <div class="popup-content">
+        <span class="close-sign" id="closePopup">&times;</span>
+        <p>Upload an Image to Work with</p>
+
+        <div class="upload-image">
+          <div id="uploadLocal" class="upload-local">
+            <p>
+              <input
+                type="file"
+                accept="image/*"
+                name="image"
+                id="inputImage"
+                style="display: none"
+              />
+            </p>
+            <p>
+              <label for="inputImage" style="cursor: pointer">Upload Image</label>
+            </p>
+            <p><img id="output" width="80" height="80" style="display: none; margin: auto;"/></p>
+          </div>
+
+          <div id="uploadUrl" class="upload-url"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- <script src="app.js"></script> -->
+
+    <script src="js/mandatory.js"></script>
+
+  </body>
+</html>

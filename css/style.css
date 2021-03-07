@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+
+
+#canvasId {
+  /* border: 2px solid black; */
+  /* width: 100vw; */
+  
+}
+
+/* The Dialog box - popup Window (background) */
+.popup-window {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.2); /* Black w/ opacity */
+}
+
+/* popup Content */
+.popup-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.popup-content p {
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 600;
+
+}
+
+/* two ways to upload image <div>s */
+
+.upload-image{
+    margin: 3rem 1rem;
+    display: flex;
+}
+
+/* Upload image from Local Storage */
+.upload-local {
+  height: 15vh;
+  width: 50%;
+  border-right: 1px solid #888;
+  
+}
+/* Upload image with Url */
+.upload-url {
+  height: 15vh;
+  width: 50%;
+  
+}
+
+/* The Popup-Window Close Button */
+.close-sign {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-sign:hover,
+.close-sign:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* navbar dropdown menu styling  */
+
+.dropdown {
+  display: flex;
+  background-color: #dfdfdf;
+}
+
+
+.menu button {
+  border: none;
+  padding: 0 .5rem;
+  background-color: #dfdfdf;
+  outline: none;
+  /* font-size: .9rem; */
+  line-height: 2;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: #aaa;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 2%;
+  padding: .1rem 0;
+}
+.dropdown-content hr {
+  margin: 0 .2rem;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.menu:hover .dropdown-content {display: block;}
+
+.menu:hover button {
+  background-color: rgb(247, 247, 247);
+  box-shadow: inset -1px -2px 4px 0px rgba(0,0,0,0.4);
+}
+
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: .1rem 1rem;
+}
+
+
+
+/* toolbar next to the Canvas styling */
+
+#mainSection{
+  display: flex;
+}
+
+.toolbar-canvas {
+  background-color: #dfdfdf;
+  
+  
+}
+
+.pair-of-tools {
+  display: flex;
+  
+}
+
+.tool {
+  padding: .3rem .3rem .1rem .3rem;
+  border: 1px solid black;
+  margin: 0 0 .1rem .1rem;
+  box-shadow: inset 2px 2px 3px 0px rgba(0, 0, 0, 0.4);
+  border-bottom: .1rem solid white;
+  border-right: .1rem solid white;
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #aaa;
+  border: .1rem solid black;
+  box-shadow: none;
+  border-radius: 10%;
+ 
+}
+
+.tooltip {
+  display: none;
+}
+
+.tool:hover .tooltip{
+  display: block;
+  position: absolute;
+  background-color: #dfdfdf;
+  border: 1px solid black;
+  font-size: .8rem;
+  padding: .1rem .3rem;
+  box-shadow: inset -.1rem -.2rem .3rem rgba(0,0,0,0.3), .1rem .2rem .3rem rgba(0,0,0,0.3);
+}
+
+/* tool-parameters tool option area */
+
+.toolbar-canvas .tool-params{
+  width: 65%;
+  height: 5rem;
+  border: 1px solid black;
+  margin: .3rem auto;
+
+  border-bottom: .1rem solid #fff;
+  border-right: .1rem solid #fff;
+  border-left: .1rem solid black;
+  border-top: .1rem solid black;
+  box-shadow: inset 2px 2px 4px 0px rgba(0, 0, 0, 0.4);
+
+}
